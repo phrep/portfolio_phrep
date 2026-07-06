@@ -1,15 +1,38 @@
 {% extends 'base.html' %}
-{% block title %} Projetos | Meu Portfólio {% endblock %}
+{% block title %}Projetos | Meu Portfólio{% endblock %}
 
 {% block content %}
-    <section>
-        <h1>Meus Projetos</h1>
-        <p>Aqui estão alguns dos projetos que eu desenvolvi:</p>
-        <ul>
-            {% for key,data in projetos.items %}
-            <li><a href="{% url 'detalhes_projeto' id_projeto=key %}">{{data.titulo}}  </a></li>
+    <section class="section page-top">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">04</span>
+                <h2 class="section-title">Meus Projetos</h2>
+            </div>
+            <p class="page-lead">Aqui estão alguns dos projetos que desenvolvi:</p>
 
-            {% endfor %}
-        </ul>
+            <div class="projects-grid">
+                {% for key, data in projetos.items %}
+                    <a href="{% url 'detalhes_projeto' id_projeto=key %}" class="project-card">
+                        <div class="project-thumb">
+                            {% if data.imagem %}
+                                <img src="{{ data.imagem }}" alt="Prévia do projeto {{ data.titulo }}" loading="lazy">
+                            {% else %}
+                                <span class="project-thumb-fallback" aria-hidden="true">{{ data.titulo|slice:":2"|upper }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="project-body">
+                            <span class="project-index">{{ forloop.counter|stringformat:"02d" }}</span>
+                            <h3 class="project-title">{{ data.titulo }}</h3>
+                            {% if data.descricao %}
+                                <p class="project-desc">{{ data.descricao|truncatewords:18 }}</p>
+                            {% endif %}
+                            <span class="project-arrow" aria-hidden="true">Ver detalhes →</span>
+                        </div>
+                    </a>
+                {% empty %}
+                    <p class="empty-state">Nenhum projeto cadastrado ainda.</p>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 {% endblock %}

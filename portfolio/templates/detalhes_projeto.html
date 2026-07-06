@@ -1,17 +1,38 @@
 {% extends 'base.html' %}
-
-
-{% block title %}{{projeto.titulo}} | Meu Portfólio {% endblock %}
+{% block title %}{{ projeto.titulo }} | Meu Portfólio{% endblock %}
 
 {% block content %}
-    <h1>{{ projeto.titulo }}</h1>
-    <section>
-        <h3>Descrição do Projeto:</h3>
-        <p>{{ projeto.descricao }}</p>
-        <h3>Tecnologias Utilizadas:</h3>
-        <p>{{ projeto.tecnologias }}</p>
-        <h3>Link para o GitHub:</h3>
-        <p><a href="{{ projeto.link_github }}" target="_blank">Ver no GitHub</a></p>
+    <section class="section page-top">
+        <div class="container detail-wrap">
+            <a href="{% url 'lista_projetos' %}" class="back-link">← Voltar para projetos</a>
 
+            <header class="detail-head">
+                <span class="eyebrow">Projeto</span>
+                <h1 class="detail-title">{{ projeto.titulo }}</h1>
+            </header>
+
+            <div class="detail-body">
+                <article class="detail-block">
+                    <h3 class="detail-label">Descrição do Projeto</h3>
+                    <p class="detail-text">{{ projeto.descricao }}</p>
+                </article>
+
+                <article class="detail-block">
+                    <h3 class="detail-label">Tecnologias Utilizadas</h3>
+                    <ul class="tech-list">
+                        {% for tech in projeto.tecnologias %}
+                            <li class="tech-badge">{{ tech }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+
+                <article class="detail-block">
+                    <h3 class="detail-label">Repositório</h3>
+                    <a href="{{ projeto.link_github }}" target="_blank" rel="noopener" class="btn btn-primary">
+                        Ver no GitHub →
+                    </a>
+                </article>
+            </div>
+        </div>
     </section>
-{% endblock %} 
+{% endblock %}

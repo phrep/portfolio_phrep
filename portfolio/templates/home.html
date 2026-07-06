@@ -1,26 +1,252 @@
-{% extends 'base.html' %}
-{% block title %}Home | Meu Portfólio {% endblock %}
 
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | Meu Portfólio{% endblock %}
 {% block content %}
 
-    <section>
-        <h1>Sobre mim</h1>
-        <p>Olá, eu sou Eng.º Paulo Henrique de Almeida, Engenheiro de Dados com experiência em Engenharia, Análise e Governança de Dados, atuando em projetos industriais de grande porte envolvendo IA, SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em ambiente cloud, migração e saneamento de dados, modelagem para analytics e automação de processos.
-Forte domínio em Python, SQL, Power BI, IA Generativa, Machine learning, bancos de dados relacionais e não relacionais, bancos vetoriais e arquitetura distribuída e soluções orientadas a dados.
-Experiência em multinacionais como BRF, Heineken, Somos Educação e Valgroup, além de atuação em empresa de software industrial com Inteligência Artificial, desenvolvendo soluções corporativas focadas em analytics, automação, eficiência operacional e IA aplicada aos negócios.
-        </p>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <p class="eyebrow">Engenheiro de Dados</p>
+                <h1 class="hero-title">
+                    Olá, eu sou <span class="accent">Paulo Henrique de Almeida</span>
+                </h1>
+                <p class="hero-lead">
+                    Transformo dados brutos em decisões de negócio — com IA, pipelines em
+                    cloud e arquitetura orientada a dados em projetos industriais de grande porte.
+                </p>
+                <div class="hero-actions">
+                    <a href="{% url 'lista_projetos' %}" class="btn btn-primary">Ver projetos</a>
+                    <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">10+ Anos</span>
+                        <span class="stat-label">dados & Industriais</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">BRF · Heineken · Valgroup</span>
+                        <span class="stat-label">Atuação em Multinacionais</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">Dados · SAP · MDM · LLM · Power BI · ETL</span>
+                        <span class="stat-label">Background</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="{% static 'portfolio/img/foto-perfil.png' %}?v=2" alt="Foto de Paulo Henrique de Almeida">
+            </div>
+        </div>
     </section>
-    <section>   
-        <h2>Habilidades</h2>
-        <ul>
-            {% for chave, dados in habilidades.items %}
-            <li>{{ dados.nome }}</li>
-            {% endfor %}
-        </ul>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">01</span>
+                <h2 class="section-title">Sobre mim</h2>
+            </div>
+            <div class="about-grid">
+                <p class="about-text">
+                    Sou Engenheiro de Dados com experiência em Engenharia, Análise e Governança
+                    de Dados, atuando em projetos industriais de grande porte envolvendo IA,
+                    SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em ambiente cloud, migração e
+                    saneamento de dados, modelagem para analytics e automação de processos.
+                </p>
+                <p class="about-text">
+                    Tenho forte domínio em Python, SQL, Power BI, IA Generativa, Machine Learning,
+                    bancos de dados, bancos vetoriais, arquitetura
+                    distribuída e soluções orientadas a dados.
+                    Já atuei em multinacionais como: BRF, Heineken, Somos Educação e Valgroup, além de uma empresa de software
+                    industrial com Inteligência Artificial, desenvolvendo soluções corporativas
+                    focadas em analytics, automação, eficiência operacional e IA aplicada aos negócios.
+                </p>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Contato</h2>
-        <p>Email: ph.89.py@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/paulo-henrique-de-almeida-a6b6358a/" target="_blank">Linkedin</a></p>
+
+    <!-- HABILIDADES -->
+    <section class="section" id="habilidades">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">02</span>
+                <h2 class="section-title">Stack Técnica</h2>
+            </div>
+            <div class="skills-categories">
+                {% for chave, dados in habilidades.items %}
+                <div class="skill-category">
+                    <h3 class="skill-category-title">{{ dados.categoria }}</h3>
+                    <ul class="skills-grid">
+                        {% for item in dados.itens %}
+                        <li class="skill-card">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMAÇÃO, CERTIFICAÇÕES E IDIOMAS -->
+    <section class="section" id="formacao">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">03</span>
+                <h2 class="section-title">Formação & Cursos</h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4 class="edu-title">Formação</h4>
+                    <ul class="edu-list">
+                        <li>Pós-graduação em IA e Ciência de Dados — Anhembi Morumbi (cursando)</li>
+                        <li>Bacharel em Engenharia Mecânica — Anhanguera, 2019</li>
+                        <li>Tecnólogo em Logística — IBTA, 2010</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <h4 class="edu-title">Cursos</h4>
+                    <ul class="edu-list">
+                        <li>AWS Data Engineer Associate 2026 (Hands On)</li>
+                        <li>Engenheiro de Agentes de IA — Asimov Academy</li>
+                        <li>Lean 6 Sigma Green Belt — FM2S</li>
+                        <li>Data Super Stars (Machine Learning) — Heineken/Fabwork</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <h4 class="edu-title">Idiomas</h4>
+                    <ul class="edu-list">
+                        <li>Inglês — Intermediário/Avançado</li>
+                        <li>Espanhol — Básico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="section" id="experiencia">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">04</span>
+                <h2 class="section-title">Experiência Profissional</h2>
+            </div>
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Jan 2026 – Abr 2026 · São José dos Campos, SP</span>
+                        <h3 class="timeline-role">Analista de Dados Sênior</h3>
+                        <p class="timeline-company">DataBot Software IA S.A · Software Industrial</p>
+                        <ul class="timeline-list">
+                            <li>Desenvolvimento de soluções de IA utilizando Python e frameworks como LangChain, aplicadas à automação de análises e geração de insights para operações industriais;</li>
+                            <li>Atuação em sistema de gestão de chão de fábrica (Databot), abrangendo módulos como MPS, MES, PCP, Supply Chain e Supply Review, com foco em planejamento e controle da produção;</li>
+                            <li>Condução de reuniões com áreas de negócio (PCP, planejamento produtivo, logística e supply chain), traduzindo regras operacionais em algoritmos, modelos analíticos e lógicas de otimização;</li>
+                            <li>Desenvolvimento e integração de algoritmos e modelos (incluindo redes neurais) utilizando Python, C++ e Lua, aplicados à tomada de decisão em ambientes industriais;</li>
+                            <li>Construção de pipelines de dados em ambiente AWS, processos de ingestão, transformação e carga (ETL), com foco em escalabilidade e confiabilidade;</li>
+                            <li>Modelagem e persistência de dados em bancos relacionais e não relacionais, incluindo PostgreSQL e MongoDB;</li>
+                            <li>Aplicação de análise de dados voltada ao contexto produtivo, suportando decisões relacionadas a capacidade, demanda, planejamento e eficiência operacional;</li>
+                            <li>Atuação no suporte técnico e análise de incidentes, garantindo estabilidade e evolução contínua de pipelines e sistemas críticos;</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Fev 2025 – Nov 2025 · Lorena, SP</span>
+                        <h3 class="timeline-role">Analista de Dados Mestres</h3>
+                        <p class="timeline-company">Valgroup · Indústria de Embalagens</p>
+                        <p class="timeline-text">Governança de dados mestres e Projeto de implementação SAP S/4HANA:</p>
+                        <ul class="timeline-list">
+                            <li>Atuação como Key User em projetos de implantação SAP S/4HANA, suportando definição, padronização, classificação e implementação de processos de Dados Mestres de Materiais, baseado em análise de banco de dados de cadastro de materiais industriais SAP.</li>
+                            <li>Desenvolvimento de RPA, software, scripts e automações para otimizar fluxos de cadastro e manutenção de dados mestres com utilização de tecnologia (Python / SAP Script / IA / LLM / Web scraping).</li>
+                            <li>Estudos estatísticos avançados, análises descritiva, exploratória e preditivas com utilização de algoritmos de similaridade, utilizando NLP (Processamento de Linguagem Natural) e Machine Learning.</li>
+                            <li>Desenvolvimento e manutenção de dashboards em Power BI, organização de banco de dados de vários tipos: Excel, Google BigQuery, SQL;</li>
+                            <li>Validação de processos, criação de documentação e treinamento de usuários durante e após o go-live.</li>
+                            <li>Classificação, padronização e saneamento dos materiais, definição e implementação de PDM (padrão descritivo), validação técnica, eliminação de duplicidades, organização de famílias, estruturação de grupos e tipos de materiais. Alteração de status de materiais, obsolescência e bloqueios de códigos SAP.</li>
+                            <li>Suporte contínuo às áreas de Compras, Engenharia, Logística, PCM e Produção, garantindo padronização e confiabilidade dos dados mestres no SAP.</li>
+                            <li>Gestão de solicitações de cadastro de materiais e serviços em software PIPEFY metodologia KANBAN, assegurando integridade, padronização às regras da governança de dados mestres.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Out 2021 – Ago 2024</span>
+                        <h3 class="timeline-role">Analista Corporativo de Inteligência de Manutenção</h3>
+                        <p class="timeline-company">Heineken · Indústria de Bebidas</p>
+                        <ul class="timeline-list">
+                            <li>Suporte em análise e inteligência de dados para manutenção e planejamento MRP nas 12 principais fábricas do Brasil;</li>
+                            <li>Governança com PCM e procurement: apresentação de análises descritivas, exploratórias, resultados de indicadores e Dashboards. Gerando insights e criando planos de ação junto a áreas de negócio metodologia Waterfall;</li>
+                            <li>Gestão de cadastro de materiais, controle de estoque, parametrização e análises para otimização de níveis de estoque;</li>
+                            <li>Desenvolvimento de dashboards Power BI e automações em Python;</li>
+                            <li>Projeto Algoritmo MRP: Este projeto eu desenvolvi em um programa interno na Heineken, Data Super Stars. Trata-se de um algoritmo em Python que calcula os parâmetros ideais de acordo com o histórico de consumo dos materiais e promove uma melhoria continua;</li>
+                            <li>Projeto Contratos locais: Business case de fornecedores locais, análise de dados estratégicos, classificação de materiais críticos e fornecedores locais com baixo lead time por planta/regional. Desenvolvimento de contratos com fornecedores locais, visando automação de pedidos e diminuição de lead time total no fluxo de reposição automático MRP;</li>
+                            <li>Projeto Data cleasing: Classificação, organização, Análise de similaridade de cadastros, Limpeza e unificação de códigos SAP de materiais;</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">2011 – 2018</span>
+                        <h3 class="timeline-role">Trajetória inicial em Operações e Compras</h3>
+                        <p class="timeline-company">BRF (Sadia/Perdigão) · Somos Educação · IPPLAN</p>
+                        <p class="timeline-text">
+                            Base sólida em logística, suprimentos e melhoria contínua: gestão de manutenção e frota,
+                            indicadores de desempenho, roteirização, cotações, negociações e gestão de contratos.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+
+            <!-- PROJETOS INDUSTRIAIS -->
+            <div class="industrial-projects">
+                <h3 class="industrial-title">Projetos Industriais de Destaque</h3>
+                <div class="industrial-grid">
+                    {% for chave, dados in projetos_industriais.items %}
+                    <div class="industrial-card">
+                        <h4 class="industrial-card-title">{{ dados.titulo }}</h4>
+                        <p class="industrial-card-text">{{ dados.descricao }}</p>
+                    </div>
+                    {% empty %}
+                    <p class="empty-state">Nenhum projeto industrial cadastrado ainda.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">05</span>
+                <h2 class="section-title">Contato</h2>
+            </div>
+            <div class="contact-card">
+                <p class="contact-lead">Vamos conversar sobre dados, IA e novos projetos.</p>
+                <div class="contact-links">
+                    <a href="mailto:ph.89.py@gmail.com" class="contact-link">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">ph.89.py@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/paulo-henrique-de-almeida-a6b6358a/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">/paulo-henrique-de-almeida</span>
+                    </a>
+                    <a href="https://github.com/phrep" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">/phrep</span>
+                    </a>
+                    <a href="tel:+5512988157064" class="contact-link">
+                        <span class="contact-label">Telefone</span>
+                        <span class="contact-value">(12) 98815-7064</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}
