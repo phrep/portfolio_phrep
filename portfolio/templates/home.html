@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Home | Meu Portfólio {% endblock %}
+
+{% block content %}
+
+    <section>
+        <h1>Sobre mim</h1>
+        <p>Olá, eu sou Eng.º Paulo Henrique de Almeida, Engenheiro de Dados com experiência em Engenharia, Análise e Governança de Dados, atuando em projetos industriais de grande porte envolvendo IA, SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em ambiente cloud, migração e saneamento de dados, modelagem para analytics e automação de processos.
+Forte domínio em Python, SQL, Power BI, IA Generativa, Machine learning, bancos de dados relacionais e não relacionais, bancos vetoriais e arquitetura distribuída e soluções orientadas a dados.
+Experiência em multinacionais como BRF, Heineken, Somos Educação e Valgroup, além de atuação em empresa de software industrial com Inteligência Artificial, desenvolvendo soluções corporativas focadas em analytics, automação, eficiência operacional e IA aplicada aos negócios.
+        </p>
+    </section>
+    <section>   
+        <h2>Habilidades</h2>
+        <ul>
+            {% for chave, dados in habilidades.items %}
+            <li>{{ dados.nome }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Contato</h2>
+        <p>Email: ph.89.py@gmail.com</p>
+        <p><a href="https://www.linkedin.com/in/paulo-henrique-de-almeida-a6b6358a/" target="_blank">Linkedin</a></p>
+    </section>
+{% endblock %}
