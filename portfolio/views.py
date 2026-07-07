@@ -8,20 +8,14 @@ from django.views.decorators.http import require_POST
 from .chatbot import ChatbotError, ask_chatbot
 from .dados import habilidades, projetos, Linguagens, projetos_industriais
 from .chat_logger import log_conversation
+from .utils import get_client_ip
 
 CHAT_RATE_LIMIT = 8
 CHAT_RATE_WINDOW = 60  # segundos
 
 
-def _get_client_ip(request):
-    forwarded = request.META.get('HTTP_X_FORWARDED_FOR')
-    if forwarded:
-        return forwarded.split(',')[0].strip()
-    return request.META.get('REMOTE_ADDR', 'unknown')
-
-
 def _is_rate_limited(request):
-    key = f'chat_rate:{_get_client_ip(request)}'
+    key = f'chat_rate:{get_client_ip(request)}'
     if cache.add(key, 1, timeout=CHAT_RATE_WINDOW):
         count = 1
     else:
