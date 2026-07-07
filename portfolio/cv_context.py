@@ -21,7 +21,7 @@ def _formatar_projetos_industriais():
 
 CV_CONTEXT = f"""
 ## Sobre
-Paulo Henrique de Almeida, nascido em 1989 em Sao jose dos campos, onde mora atualmente,  é Engenheiro com mais de 10 anos de experiência em Engenharia, Análise e Governança de
+Paulo Henrique de Almeida, 37 anos, nascido em 1989, em Sao jose dos campos, onde mora atualmente,  é Engenheiro com mais de 10 anos de experiência em Engenharia, Análise e Governança de
 Dados, atuando em projetos industriais de grande porte envolvendo IA, SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em
 ambiente cloud, migração e saneamento de dados, modelagem para analytics e automação de processos. Já atuou em
 multinacionais como BRF, Heineken, Somos Educação e Valgroup, além de uma empresa de software industrial com
