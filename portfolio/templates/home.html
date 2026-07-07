@@ -13,8 +13,8 @@
                     Olá, eu sou <span class="accent">Paulo Henrique de Almeida</span>
                 </h1>
                 <p class="hero-lead">
-                    Transformo dados brutos em decisões de negócio — com IA, pipelines em
-                    cloud e arquitetura orientada a dados em projetos industriais de grande porte.
+                    Transformo dados brutos em decisões de negócio, unindo análise de dados, pipelines
+                    em nuvem e LLMs em arquiteturas orientadas a dados para projetos industriais de grande porte.
                 </p>
                 <div class="hero-actions">
                     <a href="{% url 'lista_projetos' %}" class="btn btn-primary">Ver projetos</a>
@@ -23,21 +23,21 @@
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-num">10+ Anos</span>
-                        <span class="stat-label">dados & Industriais</span>
+                        <span class="stat-label">Experiência Industrial</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-num">BRF · Heineken · Valgroup</span>
+                        <span class="stat-num">BRF · Heineken · Somos · Valgroup</span>
                         <span class="stat-label">Atuação em Multinacionais</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-num">Dados · SAP · MDM · LLM · Power BI · ETL</span>
-                        <span class="stat-label">Background</span>
+                        <span class="stat-num">Data Engineering · Analytics · MDM · SAP</span>
+                        <span class="stat-label">Especialidades Técnicas</span>
                     </div>
                 </div>
             </div>
 
             <div class="hero-image">
-                <img src="{% static 'portfolio/img/foto-perfil.png' %}?v=2" alt="Foto de Paulo Henrique de Almeida">
+                <img src="{% static 'css/foto-perfil.png' %}?v=3" alt="Foto de Paulo Henrique de Almeida">
             </div>
         </div>
     </section>
@@ -51,17 +51,17 @@
             </div>
             <div class="about-grid">
                 <p class="about-text">
-                    Sou Engenheiro de Dados com experiência em Engenharia, Análise e Governança
-                    de Dados, atuando em projetos industriais de grande porte envolvendo IA,
-                    SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em ambiente cloud, migração e
-                    saneamento de dados, modelagem para analytics e automação de processos.
+                    Sou um Profissional de Dados focado em transformar operações industriais complexas em decisões
+                    orientadas por dados. Atuo do início ao fim do ciclo, da engenharia e governança de dados
+                    até a entrega de dashboards em Power BI e soluções de IA aplicada, 
+                    sempre orientado pelas regras de negócio com foco em agregar valor e resultados mensuráveis ao processo.
                 </p>
                 <p class="about-text">
                     Tenho forte domínio em Python, SQL, Power BI, IA Generativa, Machine Learning,
                     bancos de dados, bancos vetoriais, arquitetura
                     distribuída e soluções orientadas a dados.
                     Já atuei em multinacionais como: BRF, Heineken, Somos Educação e Valgroup, além de uma empresa de software
-                    industrial com Inteligência Artificial, desenvolvendo soluções corporativas
+                    industrial com Inteligência Artificial(DataBot), desenvolvendo soluções corporativas
                     focadas em analytics, automação, eficiência operacional e IA aplicada aos negócios.
                 </p>
             </div>
@@ -126,11 +126,31 @@
         </div>
     </section>
 
+    <!-- PROJETOS INDUSTRIAIS -->
+    <section class="section" id="projetos-industriais">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-index">04</span>
+                <h2 class="section-title">Projetos Industriais de Destaque</h2>
+            </div>
+            <div class="industrial-grid">
+                {% for chave, dados in projetos_industriais.items %}
+                <div class="industrial-card">
+                    <h4 class="industrial-card-title">{{ dados.titulo }}</h4>
+                    <p class="industrial-card-text">{{ dados.descricao }}</p>
+                </div>
+                {% empty %}
+                <p class="empty-state">Nenhum projeto industrial cadastrado ainda.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
     <!-- EXPERIÊNCIA -->
     <section class="section" id="experiencia">
         <div class="container">
             <div class="section-head">
-                <span class="section-index">04</span>
+                <span class="section-index">05</span>
                 <h2 class="section-title">Experiência Profissional</h2>
             </div>
             <ol class="timeline">
@@ -201,21 +221,6 @@
                     </div>
                 </li>
             </ol>
-
-            <!-- PROJETOS INDUSTRIAIS -->
-            <div class="industrial-projects">
-                <h3 class="industrial-title">Projetos Industriais de Destaque</h3>
-                <div class="industrial-grid">
-                    {% for chave, dados in projetos_industriais.items %}
-                    <div class="industrial-card">
-                        <h4 class="industrial-card-title">{{ dados.titulo }}</h4>
-                        <p class="industrial-card-text">{{ dados.descricao }}</p>
-                    </div>
-                    {% empty %}
-                    <p class="empty-state">Nenhum projeto industrial cadastrado ainda.</p>
-                    {% endfor %}
-                </div>
-            </div>
         </div>
     </section>
 
@@ -223,7 +228,7 @@
     <section class="section contact" id="contato">
         <div class="container">
             <div class="section-head">
-                <span class="section-index">05</span>
+                <span class="section-index">06</span>
                 <h2 class="section-title">Contato</h2>
             </div>
             <div class="contact-card">

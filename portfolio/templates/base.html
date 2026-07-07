@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Paulo Henrique de Almeida — Engenheiro de Dados especializado em IA, SAP S/4HANA, ETL/ELT e analytics.">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <title>{% block title %}Meu Portfólio{% endblock %}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,5 +39,33 @@
             <p class="footer-muted">Engenheiro de Dados · Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- CHATBOT -->
+    <div class="chatbot" id="chatbot">
+        <button type="button" class="chatbot-toggle" id="chatbot-toggle" aria-label="Abrir chat">
+            <img src="{% static 'img/robo.png' %}" alt="" class="chatbot-toggle-icon">
+        </button>
+        <div class="chatbot-panel" id="chatbot-panel">
+            <div class="chatbot-header">
+                <img src="{% static 'img/robo.png' %}" alt="" class="chatbot-header-icon">
+                <span>Assistente do Paulo</span>
+                <button type="button" class="chatbot-close" id="chatbot-close" aria-label="Fechar chat">✕</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chatbot-message-row chatbot-message-row-bot">
+                    <img src="{% static 'img/robo.png' %}" alt="" class="chatbot-avatar">
+                    <div class="chatbot-message chatbot-message-bot">
+                        Olá! Sou o assistente virtual do Paulo. Pergunte sobre experiência, formação, projetos ou stack técnica.
+                    </div>
+                </div>
+            </div>
+            <form class="chatbot-input-row" id="chatbot-form">
+                <input type="text" id="chatbot-input" placeholder="Digite sua pergunta..." autocomplete="off" maxlength="1000">
+                <button type="submit" class="btn btn-primary chatbot-send">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/chatbot.js' %}"></script>
 </body>
 </html>

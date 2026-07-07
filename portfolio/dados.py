@@ -65,24 +65,57 @@ projetos = {
     'descricao': 'Desenvolvimento de um pipeline ETL distribuído utilizando Airflow e Celery para processamento de dados em escala.',
     'tecnologias': ['Python', 'Airflow', 'Celery', 'Docker'],
     'link_github': 'https://github.com/phrep/Pipeline_ETL_Airflow_API_Schiphol'
+},
+
+'projeto3': {
+    'titulo': 'Segmentação de Clientes por Uso de Cartão de Crédito',
+    'descricao': 'Análise de aproximadamente 9.000 titulares de cartão de crédito, examinando 18 características comportamentais para segmentá-los em grupos com perfis similares e gerar insights para estratégias de marketing direcionadas.',
+    'tecnologias': ['Python', 'Machine Learning', 'Jupyter Notebook', 'Scikit-learn'],
+    'link_github': 'https://github.com/phrep/SEGMENTA-O_DE_CLIENTES_BASEADO_NO_USO_DO_CART-O_DE_CR-DITO'
+},
+
+'projeto4': {
+    'titulo': 'Predição de Preço de Carros — Tabela FIPE',
+    'descricao': 'Modelo de machine learning para prever preços de automóveis com base na tabela FIPE, incluindo análise exploratória, limpeza de dados e pipeline completo de modelagem e seleção de modelos.',
+    'tecnologias': ['Python', 'Machine Learning', 'Scikit-learn', 'Jupyter Notebook'],
+    'link_github': 'https://github.com/phrep/Predi-o_de_pre-o_de_carros_tabela_FIPE_Machine_learning'
+},
+
+'projeto5': {
+    'titulo': 'Pipeline ETL na AWS com Terraform',
+    'descricao': 'Pipeline de processamento de dados automatizada na AWS: armazena arquivos CSV no S3, cataloga com Glue Crawler, executa um Glue Job em PySpark para transformação e salva os resultados em outro bucket S3, com infraestrutura como código via Terraform.',
+    'tecnologias': ['Terraform', 'Python', 'PySpark', 'AWS S3', 'AWS Glue', 'Athena'],
+    'link_github': 'https://github.com/phrep/Terraform_Pipeline_ETL_AWS'
 }
 }
 
 projetos_industriais = {
     'industrial1': {
-        'titulo': 'Evolução de Sistema MES/MPS/PCP (Databot)',
-        'descricao': 'Evolução de software de gestão de chão de fábrica, abrangendo módulos MES, MPS, PCP, Supply Chain e Supply Review, com suporte a decisões de planejamento produtivo, logística e operações.',
+        'titulo': 'Evolução de Pipeline de dados SAP em Sistema de Gestão Industrial',
+        'descricao': 'Evolução de pipeline de dados, definição squema DataWarehouse, persistencia de dados, particionamento de dados oriundos do SAP em ambiente AWS, software de gestão de chão de fábrica, abrangendo módulos MES, MPS, PCP, Supply Chain e Supply Review, com suporte a decisões de planejamento produtivo, logística e operações.',
     },
     'industrial2': {
         'titulo': 'Tradução de Regras de Negócio em Algoritmos de IA',
         'descricao': 'Levantamento e tradução de regras de negócio e processos industriais para desenvolvimento de algoritmos e incorporação em sistemas e modelos de IA.',
     },
     'industrial3': {
-        'titulo': 'Rollout SAP S/4HANA · MDM · Data Cleansing',
-        'descricao': 'Participação em projetos de rollout SAP S/4HANA, com atuação em MDM (Master Data Management) e processos de data cleansing.',
+        'titulo': 'Rollout SAP S/4HANA · MDM',
+        'descricao': 'Participação em projetos de rollout SAP S/4HANA, como Key-user de MDM (Master Data Management), desenvolvimento de automação RPA cadastros em massa e Rede neural similaridade entre cadastros.',
     },
     'industrial4': {
-        'titulo': 'Governança de Dados Mestres SAP',
-        'descricao': 'Estruturação e governança de dados mestres SAP, garantindo padronização, confiabilidade e integridade das informações para as áreas de negócio.',
+        'titulo': 'Governança de Dados Mestres SAP · Data Cleansing',
+        'descricao': 'Estruturação, governança e limpeza data cleansing do banco de dados SAP MDM de dados mestres SAP, garantindo padronização, confiabilidade e integridade das informações para as áreas de negócio.',
+    },
+    'industrial5': {
+        'titulo': 'Desenvolvimento de algoritmo cálculo de MRP automatico',
+        'descricao': 'Algoritmo em python para cálculo ótimo de parâmetros do MRP (Material Requirements Planning) automatizado e dinâmico, baseado no consumo e lead-time de reposição. Visando otimizar o planejamento de materiais e recursos na produção.',
+    },
+        'industrial6': {
+        'titulo': 'Desenvolvimento de Dashboard em Power BI para monitoramento de KPIs',
+        'descricao': 'Desenvolvimento de dashboards interativos em Power BI para monitoramento de KPIs (Key Performance Indicators) e métricas de desempenho.',
+    },
+        'industrial7': {
+        'titulo': 'Análise descritiva, exploratória e preditiva de dados industriais',
+        'descricao': 'Desenvolvimento de análises descritivas, exploratórias e preditivas de dados industriais e de machine learning para identificar padrões, tendências e insights relevantes para a tomada de decisão.',
     },
 }
