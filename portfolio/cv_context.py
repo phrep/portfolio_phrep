@@ -74,7 +74,7 @@ Inteligência Artificial.
 ## Projetos Pessoais
 {_formatar_projetos()}
 
-## Projetos Industriais de Destaque
+## Projetos de Destaque
 {_formatar_projetos_industriais()}
 
 ## Contato

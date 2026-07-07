@@ -118,4 +118,8 @@ projetos_industriais = {
         'titulo': 'Análise descritiva, exploratória e preditiva de dados industriais',
         'descricao': 'Desenvolvimento de análises descritivas, exploratórias e preditivas de dados industriais e de machine learning para identificar padrões, tendências e insights relevantes para a tomada de decisão.',
     },
+    'industrial8': {
+        'titulo': 'Portfólio Pessoal com Chatbot de IA e Observabilidade em Produção',
+        'descricao': 'Desenvolvimento deste próprio portfólio em Django, com assistente virtual integrado a LLM (Groq/Llama 3.3) para responder perguntas sobre experiência e projetos. Persistência do histórico de conversas em PostgreSQL (Supabase) via Django ORM, com painel administrativo para observabilidade. Containerização com Docker, deploy contínuo via Git no Render e hardening de segurança (HSTS, rate limiting, proteção contra força bruta), tudo em infraestrutura 100% gratuita.',
+    },
 }
