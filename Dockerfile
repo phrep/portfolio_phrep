@@ -15,4 +15,4 @@ RUN python manage.py collectstatic --noinput
 ENV PORT=8080
 EXPOSE 8080
 
-CMD exec gunicorn core.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60
+CMD python manage.py migrate --noinput && exec gunicorn core.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60

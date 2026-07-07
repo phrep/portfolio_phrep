@@ -21,7 +21,7 @@ def _formatar_projetos_industriais():
 
 CV_CONTEXT = f"""
 ## Sobre
-Paulo Henrique de Almeida é Engenheiro de Dados com mais de 10 anos de experiência em Engenharia, Análise e Governança de
+Paulo Henrique de Almeida, nascido em 1989 em Sao jose dos campos, onde mora atualmente,  é Engenheiro com mais de 10 anos de experiência em Engenharia, Análise e Governança de
 Dados, atuando em projetos industriais de grande porte envolvendo IA, SAP S/4HANA, Indústria 4.0, pipelines ETL/ELT em
 ambiente cloud, migração e saneamento de dados, modelagem para analytics e automação de processos. Já atuou em
 multinacionais como BRF, Heineken, Somos Educação e Valgroup, além de uma empresa de software industrial com
@@ -33,10 +33,14 @@ Inteligência Artificial.
 - Tecnólogo em Logística — IBTA, 2010
 
 ## Cursos e Certificações
+- Redes Neurais e Processamento de Linguagem Natural - Anhembi Morumbi
 - AWS Data Engineer Associate 2026 (Hands On)
 - Engenheiro de Agentes de IA — Asimov Academy
 - Lean 6 Sigma Green Belt — FM2S
 - Data Super Stars (Machine Learning) — Heineken/Fabwork
+- Machine learning - Alura
+- SQL - Alura
+- Python - Alura
 
 ## Idiomas
 - Inglês — Intermediário/Avançado
