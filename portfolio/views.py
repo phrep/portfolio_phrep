@@ -7,7 +7,7 @@ from django.views.decorators.http import require_POST
 
 from .chatbot import ChatbotError, ask_chatbot
 from .dados import habilidades, projetos, Linguagens, projetos_industriais
-from .firestore_logger import log_conversation
+from .chat_logger import log_conversation
 
 CHAT_RATE_LIMIT = 8
 CHAT_RATE_WINDOW = 60  # segundos
