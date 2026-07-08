@@ -98,12 +98,13 @@ WSGI_APPLICATION = "core.wsgi.application"
 import dj_database_url
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
+_usa_postgres = bool(DATABASE_URL) and not DATABASE_URL.startswith("sqlite")
 
 DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=bool(DATABASE_URL),
+        ssl_require=_usa_postgres,
     )
 }
 
