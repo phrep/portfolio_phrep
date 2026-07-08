@@ -86,6 +86,13 @@ projetos = {
     'descricao': 'Pipeline de processamento de dados automatizada na AWS: armazena arquivos CSV no S3, cataloga com Glue Crawler, executa um Glue Job em PySpark para transformação e salva os resultados em outro bucket S3, com infraestrutura como código via Terraform.',
     'tecnologias': ['Terraform', 'Python', 'PySpark', 'AWS S3', 'AWS Glue', 'Athena'],
     'link_github': 'https://github.com/phrep/Terraform_Pipeline_ETL_AWS'
+},
+
+'projeto6': {
+    'titulo': 'Portfólio Pessoal com Chatbot de IA e Observabilidade em Produção',
+    'descricao': 'Desenvolvimento deste próprio portfólio em Django, com assistente virtual integrado a LLM (Groq/Llama 3.3) para responder perguntas sobre experiência e projetos. Persistência do histórico de conversas em PostgreSQL (Supabase) via Django ORM, com painel administrativo para observabilidade. Containerização com Docker, deploy contínuo via Git no Render e hardening de segurança (HSTS, rate limiting, proteção contra força bruta), tudo em infraestrutura 100% gratuita.',
+    'tecnologias': ['Python', 'Django', 'PostgreSQL', 'Docker', 'LLM/Groq'],
+    'link_github': 'https://github.com/phrep/portfolio_phrep'
 }
 }
 
