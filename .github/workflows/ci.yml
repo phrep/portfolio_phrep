@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SECRET_KEY: ci-test-secret-key
-      DEBUG: "False"
+      DEBUG: "True"
       ALLOWED_HOSTS: testserver
 
     steps:
