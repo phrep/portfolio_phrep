@@ -5,6 +5,7 @@ class ChatLog(models.Model):
     message = models.TextField()
     reply = models.TextField(blank=True, null=True)
     error = models.CharField(max_length=255, blank=True, null=True)
+    ip_address = models.GenericIPAddressField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
