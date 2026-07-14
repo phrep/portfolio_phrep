@@ -41,11 +41,15 @@ USE_X_FORWARDED_HOST = True
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",") if o.strip()]
 
 if not DEBUG:
-    SECURE_SSL_REDIRECT = True
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+    # Permite desligar o redirect HTTPS em produção quando ainda não há certificado TLS
+    # configurado no servidor (ex: deploy inicial só por IP, sem domínio).
+    _https_enforced = os.environ.get("SECURE_SSL_REDIRECT", "True") == "True"
+    if _https_enforced:
+        SECURE_SSL_REDIRECT = True
+        SECURE_HSTS_SECONDS = 31536000
+        SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SESSION_COOKIE_SECURE = _https_enforced
+    CSRF_COOKIE_SECURE = _https_enforced
 
 
 # Application definition
