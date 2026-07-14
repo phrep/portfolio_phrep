@@ -63,13 +63,17 @@ def chat_api(request):
     if not isinstance(history, list):
         history = []
 
+    client_ip = get_client_ip(request)
+    if client_ip == 'unknown':
+        client_ip = None
+
     try:
         reply = ask_chatbot(message, history)
     except ChatbotError as exc:
-        log_conversation(message, error=str(exc))
+        log_conversation(message, error=str(exc), ip_address=client_ip)
         return JsonResponse({'error': str(exc)}, status=502)
 
-    log_conversation(message, reply=reply)
+    log_conversation(message, reply=reply, ip_address=client_ip)
     return JsonResponse({'reply': reply})
 
 
