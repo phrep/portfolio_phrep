@@ -12,15 +12,26 @@ from .utils import get_client_ip
 
 CHAT_RATE_LIMIT = 8
 CHAT_RATE_WINDOW = 60  # segundos
+CHAT_DAILY_LIMIT = 60
+CHAT_DAILY_WINDOW = 60 * 60 * 24  # segundos
 
 
 def _is_rate_limited(request):
-    key = f'chat_rate:{get_client_ip(request)}'
-    if cache.add(key, 1, timeout=CHAT_RATE_WINDOW):
-        count = 1
+    ip = get_client_ip(request)
+
+    minute_key = f'chat_rate:{ip}'
+    if cache.add(minute_key, 1, timeout=CHAT_RATE_WINDOW):
+        minute_count = 1
     else:
-        count = cache.incr(key)
-    return count > CHAT_RATE_LIMIT
+        minute_count = cache.incr(minute_key)
+
+    day_key = f'chat_rate_daily:{ip}'
+    if cache.add(day_key, 1, timeout=CHAT_DAILY_WINDOW):
+        day_count = 1
+    else:
+        day_count = cache.incr(day_key)
+
+    return minute_count > CHAT_RATE_LIMIT or day_count > CHAT_DAILY_LIMIT
 
 
 # Create your views here.
