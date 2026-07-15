@@ -67,7 +67,7 @@ jobs:
             docker run -d \
               --name portfolio \
               --restart unless-stopped \
-              -p 80:8080 \
+              -p 127.0.0.1:8080:8080 \
               --env-file .env \
               portfolio-server
             docker image prune -f
