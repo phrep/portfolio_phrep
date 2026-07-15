@@ -19,3 +19,7 @@ db.sqlite3
 
 # Arquivos estáticos coletados
 staticfiles/
+
+# Notas internas de deploy/infra (não deve ser publico, projeto é usado como portfolio)
+docs/DEPLOY-STATUS.md
+docs/Guia-Deploy-Portfolio.pdf
