@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_POST
 
 from .chatbot import ChatbotError, ask_chatbot
-from .dados import habilidades, projetos, Linguagens, projetos_industriais
+from .dados import habilidades, projetos, Linguagens, projetos_industriais, experiencias
 from .chat_logger import log_conversation
 from .utils import get_client_ip
 
@@ -41,6 +41,7 @@ def home(request):
         'projetos': projetos,
         'Linguagens': Linguagens,
         'projetos_industriais': projetos_industriais,
+        'experiencias': experiencias,
     })
 
 def lista_projetos(request):
