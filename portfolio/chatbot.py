@@ -6,7 +6,7 @@ import requests
 from .cv_context import CV_CONTEXT
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
 MAX_HISTORY_MESSAGES = 8
 MAX_MESSAGE_LENGTH = 1000
